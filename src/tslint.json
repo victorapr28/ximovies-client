@@ -1,0 +1,19 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "no-host-metadata-property": false,
+        "prefer-on-push-component-change-detection": true,
+        "directive-selector": [
+            true,
+            "attribute",
+            null,
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            null,
+            "kebab-case"
+        ]
+    }
+}

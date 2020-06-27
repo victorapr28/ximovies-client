@@ -1,0 +1,15 @@
+@import "../../../../scss/variables";
+
+.news-toggle-container {
+  margin-bottom: 5px;
+}
+
+.sitemap-description {
+  color: mat-color($app-foreground, secondary-text);
+}
+
+.inline-inputs-description {
+  color: mat-color($app-foreground, secondary-text);
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+}

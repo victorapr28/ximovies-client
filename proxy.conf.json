@@ -1,0 +1,20 @@
+{
+    "/secure": {
+        "target": "http://ximovies.com",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/storage": {
+        "target": "http://ximovies.com",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/client/assets/images": {
+        "target": "http://ximovies.com",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

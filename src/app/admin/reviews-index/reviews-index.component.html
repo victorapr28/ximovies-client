@@ -1,0 +1,56 @@
+<data-table [dataSource]="dataSource" itemsName="reviews" matSort>
+    <ng-container headerActions>
+        <button mat-raised-button (click)="openCrupdateReviewModal()" color="accent" *ngIf="currentUser.hasPermission('reviews.create')" trans>Add</button>
+    </ng-container>
+
+    <button mat-icon-button [matTooltip]="'Delete selected' | trans" (click)="maybeDeleteSelectedReviews()" headerSelectedActions *ngIf="currentUser.hasPermission('reviews.delete')">
+        <mat-icon svgIcon="delete"></mat-icon>
+    </button>
+
+    <ng-container matColumnDef="score">
+        <mat-header-cell *matHeaderCellDef mat-sort-header trans>Score</mat-header-cell>
+        <mat-cell *matCellDef="let review">
+            <mat-icon svgIcon="star-border" class="star-icon"></mat-icon>
+            <span>{{review.score}}/10</span>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="owner">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="user_id" class="name-with-image" trans>Owner</mat-header-cell>
+        <mat-cell *matCellDef="let review" class="name-with-image">
+            <ng-container *ngIf="review.user">
+                <img [src]="review.user.avatar" alt="owner avatar">
+                <span>{{review.user.display_name}}</span>
+            </ng-container>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="media-item">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="media_item_id" class="name-with-image" trans>Reviewable</mat-header-cell>
+        <mat-cell *matCellDef="let review" class="name-with-image">
+            <ng-container *ngIf="review.reviewable">
+                <img [src]="review.reviewable.poster" alt="reviewable image">
+                <span>{{review.reviewable.name}}</span>
+            </ng-container>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="public">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="body" trans>Type</mat-header-cell>
+        <mat-cell *matCellDef="let review" trans> {{review.body ? 'Review' : 'Rating'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="updated_at">
+        <mat-header-cell *matHeaderCellDef mat-sort-header trans>Last Updated</mat-header-cell>
+        <mat-cell *matCellDef="let review"> {{review.updated_at | formattedDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let review">
+            <button mat-icon-button (click)="openCrupdateReviewModal(review)" *ngIf="currentUser.hasPermission('reviews.update')" [matTooltip]="'Edit review' | trans">
+                <mat-icon svgIcon="edit"></mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+</data-table>
