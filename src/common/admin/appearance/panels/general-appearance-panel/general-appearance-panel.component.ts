@@ -14,7 +14,7 @@ export class GeneralAppearancePanelComponent implements OnInit {
         'branding.logo_light': [''],
         'branding.logo_dark': [''],
         'branding.favicon': [''],
-        'env.APP_NAME': [''],
+        'env.app_name': [''],
         'branding.site_description': [''],
     });
 

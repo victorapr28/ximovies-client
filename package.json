@@ -8,7 +8,8 @@
     "buildMemory": "ng build --source-map=false --prod --source-map --common-chunk=false --deploy-url=client/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+      "gulp": "gulp dist"
   },
   "private": true,
   "dependencies": {
