@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-      "start": "ng serve --aot --proxy-config proxy.conf.json --host 0.0.0.0",
+    "start": "ng serve --aot --proxy-config proxy.conf.json --host 0.0.0.0",
     "build": "ng build --source-map=false --prod --source-map --deploy-url=client/",
     "buildMemory": "ng build --source-map=false --prod --source-map --common-chunk=false --deploy-url=client/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-      "gulp": "gulp dist"
+    "gulp": "gulp dist"
   },
   "private": true,
   "dependencies": {
@@ -40,14 +40,14 @@
     "mux.js": "^5.6.2",
     "ng-lazyload-image": "^7.1.0",
     "ngx-color-picker": "^9.1.0",
-    "nouislider": "^14.5.0",
+    "nouislider": "^14.6.0",
     "perfect-scrollbar": "^1.5.0",
     "plyr": "^3.6.2",
     "prismjs": "^1.20.0",
     "raven-js": "^3.27.1",
     "rxjs": "~6.5.5",
     "shaka-player": "^2.5.12",
-    "slugify": "^1.4.0",
+    "slugify": "^1.4.4",
     "tslib": "^1.13.0",
     "url-polyfill": "^1.1.9",
     "zone.js": "~0.10.2"
@@ -74,7 +74,7 @@
     "gulp-svgmin": "^2.2.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "^5.0.2",
-    "karma": "^5.0.9",
+    "karma": "^5.1.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.1",
     "karma-jasmine": "~3.1.1",

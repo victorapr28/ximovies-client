@@ -4,5 +4,5 @@ export interface BackendErrorMessages {
 
 export interface BackendErrorResponse<T = BackendErrorMessages> {
     status: 'error';
-    messages: T;
+    errors: T;
 }

@@ -29,7 +29,7 @@ export abstract class HttpErrorHandler {
         const body = this.parseJson(response.error);
         const error = {
             uri,
-            messages: body.messages,
+            messages: body.errors,
             type: 'http',
             status: response.status,
             originalError: new Error(response.message)
@@ -67,19 +67,19 @@ export abstract class HttpErrorHandler {
             }
         }
 
-        if ( ! original || ! original.messages) {
+        if ( ! original || ! original.errors) {
             return this.getEmptyErrorBody();
         }
 
-        Object.keys(original.messages).forEach(key => {
-            const message = original.messages[key];
-            original.messages[key] = Array.isArray(message) ? message[0] : message;
+        Object.keys(original.errors).forEach(key => {
+            const message = original.errors[key];
+            original.errors[key] = Array.isArray(message) ? message[0] : message;
         });
 
         return original;
     }
 
     protected getEmptyErrorBody(): BackendErrorResponse {
-        return {status: 'error', messages: {}};
+        return {status: 'error', errors: {}};
     }
 }
