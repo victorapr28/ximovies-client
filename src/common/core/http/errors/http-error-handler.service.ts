@@ -67,8 +67,11 @@ export abstract class HttpErrorHandler {
             }
         }
 
-        if ( ! original || ! original.messages) {
-            return this.getEmptyErrorBody();
+        // if ( ! original || ! original.messages || !original.errors) {
+        //     return this.getEmptyErrorBody();
+        // }
+        if (typeof original.messages === 'undefined') {
+            original.messages = original.errors;
         }
 
         Object.keys(original.messages).forEach(key => {
