@@ -52,3 +52,8 @@ gulp.task('dist', function(done) {
     done();
 });
 
+gulp.task('favicon', function (done) {
+    gulp.src('./client/**')
+        .pipe(gulp.dest('./../ximovies/public/client'));
+    done();
+});

@@ -75,7 +75,7 @@ export class PrimaryFactsPanelComponent implements OnInit {
             .subscribe(title => {
                 this.form.patchValue({
                     ...title,
-                    release_date: title.release_date ? title.release_date.split(' ')[0] : null,
+                    release_date: title.release_date ? title.release_date.split('T')[0] : null,
                 });
                 this.poster$.next(title.poster);
             });
